@@ -1,0 +1,34 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+
+# Build files
+dist
+build
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Gas reports
+gas-report.txt
