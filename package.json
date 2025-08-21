@@ -1,0 +1,72 @@
+{
+  "name": "privacy-voting-system",
+  "version": "1.0.0",
+  "description": "A decentralized voting system built on Ethereum that enables privacy-preserving delegated voting through advanced cryptographic techniques. This system allows users to either vote directly on proposals or delegate their voting power to trusted representatives while maintaining complete privacy of vote choices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "compile": "hardhat compile",
+    "clean": "hardhat clean",
+    "lint": "npm run lint:sol && npm run lint:js",
+    "lint:sol": "solhint \"contracts/**/*.sol\"",
+    "lint:js": "eslint \"**/*.js\"",
+    "lint:fix": "npm run lint:sol:fix && npm run lint:js:fix",
+    "lint:sol:fix": "solhint \"contracts/**/*.sol\" --fix",
+    "lint:js:fix": "eslint \"**/*.js\" --fix",
+    "format": "prettier --write \"**/*.{js,json,md,sol}\"",
+    "format:check": "prettier --check \"**/*.{js,json,md,sol}\"",
+    "security:audit": "npm audit --audit-level=moderate",
+    "security:check": "npm run security:audit && npm run lint",
+    "node": "hardhat node",
+    "deploy": "hardhat run scripts/deploy.js",
+    "deploy:localhost": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "verify:sepolia": "hardhat run scripts/verify.js --network sepolia",
+    "interact": "hardhat run scripts/interact.js",
+    "interact:localhost": "hardhat run scripts/interact.js --network localhost",
+    "interact:sepolia": "hardhat run scripts/interact.js --network sepolia",
+    "simulate": "hardhat run scripts/simulate.js --network localhost",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "ethereum",
+    "hardhat",
+    "smart-contracts",
+    "privacy",
+    "voting",
+    "blockchain",
+    "solidity",
+    "fhe",
+    "delegation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "lint-staged": {
+    "*.sol": [
+      "solhint --fix",
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@nomicfoundation/hardhat-verify": "^2.1.2",
+    "@openzeppelin/contracts": "^5.4.0",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.38.0",
+    "hardhat": "^2.26.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.6.2",
+    "solhint": "^6.0.1",
+    "solhint-plugin-prettier": "^0.1.0"
+  }
+}
