@@ -6,7 +6,7 @@
 [![Solidity](https://img.shields.io/badge/solidity-0.8.20-363636.svg)](https://docs.soliditylang.org/)
 [![Hardhat](https://img.shields.io/badge/hardhat-2.26.4-yellow.svg)](https://hardhat.org/)
 
-**🌐 Live Demo**: [https://delegated-voting.vercel.app/](https://delegated-voting.vercel.app/)
+**🌐 Live Demo**: [https://fhe-proxy-voting.vercel.app/](https://fhe-proxy-voting.vercel.app/)
 
 A decentralized voting system built on Ethereum that enables **privacy-preserving delegated voting** through advanced cryptographic techniques. Vote directly on proposals or delegate your voting power to trusted representatives while maintaining complete privacy of vote choices.
 
@@ -665,7 +665,7 @@ npx hardhat console --network localhost
 
 ## 🌐 Live Demo
 
-**Frontend**: [https://delegated-voting.vercel.app/](https://delegated-voting.vercel.app/)
+**Frontend**: [https://fhe-proxy-voting.vercel.app/](https://fhe-proxy-voting.vercel.app/)
 
 ### Frontend Features
 
