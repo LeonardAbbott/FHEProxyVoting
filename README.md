@@ -29,12 +29,36 @@ A decentralized voting system built on Ethereum that enables **privacy-preservin
 - **Libraries**: OpenZeppelin Contracts 5.4.0
 - **Network**: Ethereum Sepolia Testnet
 - **Gas Optimization**: Yul Optimizer (200 runs)
+- **Encryption**: FHEVM SDK with Fully Homomorphic Encryption
 
 ### Frontend
-- **JavaScript**: Vanilla JS, HTML5, CSS3
+- **Framework**: React 18 with JSX components and hooks
+- **Build Tool**: Vite 5 with HMR and fast refresh
+- **Styling**: CSS3 with modern design patterns
 - **Web3**: ethers.js v6
+- **Encryption SDK**: FHEVM SDK for encrypted voting
 - **Wallet**: MetaMask Integration
-- **Deployment**: Vercel
+- **Deployment**: Vercel hosting platform
+
+### Frontend Architecture (React)
+```
+src/components/
+├── App.jsx                 # Main application container
+├── WalletConnect.jsx       # Initial connection screen
+├── MessageDisplay.jsx      # Status message display
+├── VoterRegistration.jsx   # On-chain voter registration
+├── VoteDelegation.jsx      # Delegate voting power
+├── VotingSection.jsx       # Load and manage voting
+├── ProposalsList.jsx       # Display proposals
+└── ProposalManagement.jsx  # Create new proposals
+```
+
+**React Features:**
+- React Hooks (useState, useEffect) for state management
+- Modular component architecture for maintainability
+- Async/await pattern for blockchain interactions
+- Loading states and comprehensive error handling
+- Real-time UI updates after transactions
 
 ### Development Tools
 - **Testing**: Mocha, Chai, Hardhat Network Helpers
@@ -68,7 +92,21 @@ privacy-voting-system/
 ├── deployments/                   # Deployment Records (auto-generated)
 │   └── sepolia-*.json            # Deployment history
 │
-├── index.html                     # Frontend Interface
+├── src/                          # React Frontend Source
+│   ├── components/               # React Components
+│   │   ├── App.jsx              # Main application container
+│   │   ├── WalletConnect.jsx    # Wallet connection UI
+│   │   ├── MessageDisplay.jsx   # Status messages
+│   │   ├── VoterRegistration.jsx # Voter registration
+│   │   ├── VoteDelegation.jsx   # Vote delegation
+│   │   ├── VotingSection.jsx    # Voting interface
+│   │   ├── ProposalsList.jsx    # Proposals display
+│   │   └── ProposalManagement.jsx # Create proposals
+│   ├── main.jsx                 # React app entry point
+│   └── style.css                # Global styles
+│
+├── index.html                     # HTML entry point
+├── vite.config.js                 # Vite configuration
 ├── hardhat.config.js              # Hardhat configuration
 ├── package.json                   # Dependencies & scripts
 ├── .env.example                   # Environment template
@@ -173,6 +211,20 @@ npm run compile
 **Expected output:**
 ```
 Compiled 1 Solidity file successfully (evm target: paris)
+```
+
+**6. Start React development server:**
+```bash
+npm run dev
+```
+
+**Expected output:**
+```
+  VITE v5.0.0  ready in 300 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
 ```
 
 ## 🧪 Testing
@@ -669,13 +721,16 @@ npx hardhat console --network localhost
 
 ### Frontend Features
 
-The web interface provides:
+The React-based web interface provides:
+- ⚛️ **Modern React Architecture** - Component-based UI with hooks
 - 🦊 **MetaMask Integration** - Connect your wallet seamlessly
 - 👤 **Voter Registration** - Register as a voter (owner only)
 - 📝 **Proposal Management** - Create and view voting proposals
-- 🗳️ **Encrypted Voting** - Cast private votes with FHE simulation
+- 🗳️ **Encrypted Voting** - Cast private votes with FHEVM SDK
 - 🤝 **Delegation Management** - Delegate or revoke voting power
 - ⚡ **Real-time Updates** - Instant transaction feedback and status
+- 🔄 **Loading States** - Visual feedback for all async operations
+- ❌ **Error Handling** - Comprehensive error messages and recovery
 
 ### How to Use
 
